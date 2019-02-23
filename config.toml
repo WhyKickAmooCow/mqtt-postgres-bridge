@@ -1,0 +1,14 @@
+[postgres]
+host = "192.168.1.124"
+user = "ash"
+password = "test"
+db = "ash"
+table = "readings"
+
+
+[mqtt]
+host = "192.168.1.124"
+user = "adam"
+client_id = "psql"
+password = "testing"
+port = 1883
