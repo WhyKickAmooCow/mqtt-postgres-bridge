@@ -1,5 +1,5 @@
 [postgres]
-host = "192.168.1.124"
+host = "postgresql.local"
 user = "ash"
 password = "test"
 db = "ash"
@@ -7,7 +7,7 @@ table = "readings"
 
 
 [mqtt]
-host = "192.168.1.124"
+host = "mqtt.local"
 user = "adam"
 client_id = "psql"
 password = "testing"
