@@ -31,7 +31,7 @@ def on_mqtt_message(client, userdata, message):
           + message.topic + "' with QoS " + str(message.qos))
     try:
         cur.execute(
-            "INSERT INTO readings (time, location, metric, value) VALUES (current_timestamp, %s, %s, %s);", (
+            "INSERT INTO readings (time, location, metric, value) VALUES (current_timestamp, %s, %s, NULLIF(%s, 'NaN'));", (
                 message.topic, message.topic[message.topic.rfind('/')+1:], float(message.payload)))
     except Exception as e:
         print(e)
