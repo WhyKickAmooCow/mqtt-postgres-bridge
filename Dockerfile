@@ -1,4 +1,4 @@
-FROM python:3.7.2
+FROM docker.io/library/python:3
 
 RUN useradd -d /home/python -mrs /bin/bash python
 
