@@ -1,14 +1,21 @@
 [postgres]
-host = "postgresql.local"
-user = "ash"
-password = "test"
-db = "ash"
-table = "readings"
+host = "postgres"
+port = 5432
+user = "user"
+password = "password"
+db = "database"
+table = "table"
 
 
 [mqtt]
-host = "mqtt.local"
-user = "adam"
-client_id = "psql"
-password = "testing"
 port = 1883
+host = "mqtt"
+user = "user_mqtt"
+client_id = "id"
+password = "password_mqtt"
+subscriptions = ["+/#"]
+
+[[mappings]]
+topic = "*"
+statement = "INSERT INTO table (time, value) VALUES (current_timestamp, %s);"
+values = [{ name = "value", value = "float(message.payload)" }]
